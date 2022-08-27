@@ -96,7 +96,7 @@ install:
 
 #DEVICE=ttyACM0
 DEVICE=ttyS1:115200:8:n:1:off
-#DEVICE=ttyUSB0:115200:8:n:1:off
+DEVICE=ttyUSB0:115200:8:n:1:off
 
 test1:
 	./str2str -in serial://$(DEVICE) -out file://test1.out -t 2
@@ -105,7 +105,7 @@ test2:
 	./str2str -in serial://$(DEVICE) -out tcpsvr://:2102 -c ../../../data/oem4_raw_10hz.cmd -t 5
 
 test3:
-	./str2str -in serial://$(DEVICE) -out ntrips://:sesam@localhost:8000/BUCU0 -c ../../../data/oem4_raw_10hz.cmd -t 5
+	./str2str -in serial://$(DEVICE) -out ntrips://:salvation@119.8.37.41:6002/VIDE 
 
 test4:
 	./str2str -in ../oem6_20121107.gps#nov -out oem6_20121107.rtcm3#rtcm3 -sta 123 -msg "1077(10),1087(10),1097(10),1107(10),1117(10),1019,1020"
